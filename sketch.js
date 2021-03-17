@@ -25,3 +25,17 @@
 //Optional (but I want to do it): Instead of just changing the color from white to black, have each pass through with the mouse change to a completely random RGB value. Or have it add 10% of black on each pass.
 
 //Push to GitHub!
+
+var cell = document.querySelector("div.cell");
+
+cell.addEventListener("mouseover", function() {
+    cell.style.backgroundColor = randomHsl();
+});
+
+// cell.addEventListener("mouseout", function() {
+//     cell.style.backgroundColor = "white";
+// });
+
+function randomHsl() {
+    return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
+}
