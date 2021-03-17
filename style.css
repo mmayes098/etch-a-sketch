@@ -3,6 +3,28 @@ text-align: center;
 }
 
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.column {
+    flex-basis: 100%;
+    background: black;
+}
+
+/* The below commented section is for an inline-block grid using CSS
+
+.container {
     background: black;
     display: inline-block;
     border: 5px solid black;
@@ -24,4 +46,4 @@ text-align: center;
     font-size: 3rem;
     font-weight: bold;
     background: white;
-}
+} */
