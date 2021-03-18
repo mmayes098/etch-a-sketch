@@ -37,7 +37,7 @@ window.onload = grid(16);
 
 const wrapper = document.getElementById('main');
 
-wrapper.addEventListener('mousemove', function(e) {
+wrapper.addEventListener('mouseover', function(e) {
     let element = document.elementFromPoint(e.clientX, e.clientY)
     element.style.backgroundColor = randomHsl();
 });
