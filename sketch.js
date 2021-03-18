@@ -10,9 +10,39 @@
         //ways to make divs appear as grid: float/clear, inline-block, flexbox, CSS Grid
         //be careful with borders/margins, can adjust size of squares unintentionally
 
+function grid(num) {
+    var container = document.createElement("div");
+    container.id = "main";
+    container.className = "container";
+    document.body.appendChild(container);
+    var main = document.getElementById('main');
+    for (var i=1; i<=num; i++) {
+        var row = document.createElement('div');
+        row.className = "row";
+        row.id = "row" + i;
+        main.appendChild(row);
+        var currentRow = document.getElementById('row' + i);
+        for (var r=1; r<=num; r++) {
+            var box = document.createElement('div');
+            box.className = 'box';
+            box.style.height = ((800-(num*2))/num) + 'px';
+            box.style.width = ((800-(num*2))/num) + 'px';
+            currentRow.appendChild(box);
+        }
+    }
+}
+
+window.onload = grid(16);
+
 //set up a hover effect so the grid divs change color when your mouse passes over them
     //set up event listeners for when mouse enters a div and when mouse leaves a div
     //ways to change color of divs: add new class to div, change div's background color using JS (most likely)
+
+var box = document.querySelector("div.box");
+
+box.addEventListener("mouseover", function() {
+    box.style.backgroundColor = randomHsl();
+});
 
 //add a button to the top of the screen which will clear current grid and send user a popup asking for how many squares per side to make a new grid (no more than 100 (or 64))
 //new grid gets generated in the same total space as the old grid
@@ -26,11 +56,7 @@
 
 //Push to GitHub!
 
-var cell = document.querySelector("div.cell");
 
-cell.addEventListener("mouseover", function() {
-    cell.style.backgroundColor = randomHsl();
-});
 
 // cell.addEventListener("mouseout", function() {
 //     cell.style.backgroundColor = "white";
